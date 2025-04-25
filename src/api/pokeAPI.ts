@@ -1,4 +1,4 @@
-import { PokeData } from "../types/types";
+import { PokeData } from "@/types/types";
 
 interface Description {
   language: {

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PokeData } from "@/types/types";
 
 import { fetchMultiplePokemonById } from "./pokeThunk";
-import { PokeData } from "../../types/types";
 
 export const pokeSlice = createSlice({
   extraReducers: (builder) => {
