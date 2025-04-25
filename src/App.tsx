@@ -1,5 +1,8 @@
 import { Routes, Route } from "react-router";
+import { useEffect } from "react";
 
+import { fetchMultiplePokemonById } from "./features/pokemon/pokeThunk";
+import { useAppDispatch } from "./app/hooks";
 import Favorites from "./pages/Favorites";
 import Layout from "./components/Layout";
 import Detail from "./pages/Detail";
@@ -7,6 +10,12 @@ import Search from "./pages/Search";
 import Main from "./pages/Main";
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchMultiplePokemonById(151));
+  }, [dispatch]);
+
   const ROUTES = [
     { element: <Main />, path: "/" },
     { element: <Detail />, path: "/detail" },
