@@ -17,7 +17,7 @@ function App() {
 
   const ROUTES = [
     { element: <Main />, path: "/" },
-    { element: <Detail />, path: "/detail" },
+    { path: "/detail/:pokemonId", element: <Detail /> },
     { element: <Favorites />, path: "/favorites" },
     { element: <Search />, path: "/search" },
   ];
