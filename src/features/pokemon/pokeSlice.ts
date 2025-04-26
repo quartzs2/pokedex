@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { PokeData } from "@/types/types";
+import { RootState } from "@/app/store";
 
 import { fetchMultiplePokemonById } from "./pokeThunk";
 
@@ -27,5 +28,11 @@ export const pokeSlice = createSlice({
   name: "pokemon",
   reducers: {},
 });
+
+export const selectPokemonById = (pokemonId: number) =>
+  createSelector(
+    (state: RootState) => state.pokemon.data,
+    (pokemon) => pokemon.find((element: PokeData) => element.id === pokemonId),
+  );
 
 export default pokeSlice.reducer;
