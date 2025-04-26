@@ -1,4 +1,10 @@
+import PokemonCardContainer from "@components/PokemonCardContainer";
+
 const Main = () => {
-  return <div>Main</div>;
+  return (
+    <>
+      <PokemonCardContainer />
+    </>
+  );
 };
 export default Main;
