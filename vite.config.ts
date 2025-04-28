@@ -8,12 +8,13 @@ export default defineConfig({
   resolve: {
     alias: {
       "@components": resolve(__dirname, "src/components"),
+      "@constants": resolve(__dirname, "src/constants"),
       "@features": resolve(__dirname, "src/features"),
+      "@src/types": resolve(__dirname, "src/types"),
       "@assets": resolve(__dirname, "src/assets"),
       "@pages": resolve(__dirname, "src/pages"),
       "@app": resolve(__dirname, "src/app"),
       "@api": resolve(__dirname, "src/api"),
-      "@": resolve(__dirname, "src"),
     },
   },
   plugins: [tailwindcss(), react()],
