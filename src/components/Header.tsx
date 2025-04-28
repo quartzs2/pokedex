@@ -7,7 +7,9 @@ const Header = () => {
   return (
     <header className="mx-auto flex max-w-7xl items-center justify-between gap-6 p-6">
       <Link to={"/"}>
-        <div className="mr-auto text-xl font-bold">포켓몬 도감</div>
+        <div className="mr-auto font-[NeoDunggeunmo] text-xl font-bold">
+          포켓몬 도감
+        </div>
       </Link>
       <div className="flex items-center gap-6">
         <div className="flex items-center gap-2">

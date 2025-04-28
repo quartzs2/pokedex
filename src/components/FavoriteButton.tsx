@@ -25,7 +25,7 @@ const FavoriteButton = ({ pokemonId }: FavoriteButtonProps) => {
       }}
       type="button"
     >
-      {isFavorite ? <IoMdHeart /> : <IoMdHeartEmpty />}
+      {isFavorite ? <IoMdHeart fill="#e53e3e" /> : <IoMdHeartEmpty />}
     </button>
   );
 };

@@ -44,7 +44,7 @@ const Detail = () => {
 
   return (
     <div className="mx-auto flex w-fit flex-col items-center justify-center gap-4 rounded-2xl border-2 border-gray-200 p-4 transform-3d">
-      <div className="flex w-full items-center justify-between text-2xl">
+      <div className="flex w-full items-center justify-between font-[NeoDunggeunmo] text-2xl">
         {pokemon.name} <FavoriteButton pokemonId={Number(pokemonId)} />
       </div>
       <div className="w-full text-left whitespace-pre-wrap">
