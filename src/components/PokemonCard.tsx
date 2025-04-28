@@ -1,9 +1,11 @@
 import FavoriteButton from "@components/FavoriteButton";
 import { PokeData } from "@src/types/types";
 import { useNavigate } from "react-router";
+import { useState, memo } from "react";
 
-const PokemonCard = ({ front, name, back, id }: PokeData) => {
+const PokemonCardComponent = ({ front, name, id }: PokeData) => {
   const navigate = useNavigate();
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
     <div
@@ -14,11 +16,18 @@ const PokemonCard = ({ front, name, back, id }: PokeData) => {
     >
       <FavoriteButton pokemonId={id} />
       <div>
-        <img src={front} alt={name} />
-        <img className="hidden" src={back} alt={name} />
+        {isImageLoading ? (
+          <div className="h-[96px] w-[96px] text-center leading-[96px]">
+            로딩 중입니다.
+          </div>
+        ) : null}
+        <img onLoad={() => setIsImageLoading(false)} src={front} alt={name} />
       </div>
       <div className="font-[NeoDunggeunmo]">{name}</div>
     </div>
   );
 };
+
+const PokemonCard = memo(PokemonCardComponent);
+
 export default PokemonCard;
