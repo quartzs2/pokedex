@@ -1,12 +1,13 @@
 import { fetchMultiplePokemonById } from "@features/pokemon/pokeThunk";
 import { Routes, Route } from "react-router";
 import { useAppDispatch } from "@app/hooks";
-import Favorites from "@pages/Favorites";
+import { useEffect, lazy } from "react";
 import Layout from "@components/Layout";
-import Detail from "@pages/Detail";
-import Search from "@pages/Search";
-import { useEffect } from "react";
-import Main from "@pages/Main";
+
+const Main = lazy(() => import("@pages/Main"));
+const Search = lazy(() => import("@pages/Search"));
+const Detail = lazy(() => import("@pages/Detail"));
+const Favorites = lazy(() => import("@pages/Favorites"));
 
 function App() {
   const dispatch = useAppDispatch();
