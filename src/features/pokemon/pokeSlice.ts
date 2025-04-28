@@ -42,4 +42,12 @@ export const selectPokemonByRegexp = (pokemonReg: RegExp) =>
       pokemon.filter((element: PokeData) => element.name.match(pokemonReg)),
   );
 
+export const selectFavoritePokemon = createSelector(
+  (state: RootState) => state.pokemon.data,
+  (state: RootState) => state.favorite,
+  (pokemon, favorite) => {
+    return pokemon.filter((element) => favorite.includes(element.id));
+  },
+);
+
 export default pokeSlice.reducer;
