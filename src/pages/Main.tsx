@@ -1,9 +1,9 @@
-import PokemonCardContainer from "@components/PokemonCardContainer";
+import AllCards from "@components/AllCards";
 
 const Main = () => {
   return (
     <>
-      <PokemonCardContainer />
+      <AllCards />
     </>
   );
 };

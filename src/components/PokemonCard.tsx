@@ -1,21 +1,33 @@
+import FavoriteButton from "@components/FavoriteButton";
+import { PokeData } from "@src/types/types";
 import { useNavigate } from "react-router";
-import { PokeData } from "@/types/types";
+import { useState, memo } from "react";
 
-const PokemonCard = ({ front, name, back, id }: PokeData) => {
+const PokemonCardComponent = ({ front, name, id }: PokeData) => {
   const navigate = useNavigate();
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
-    <button
-      className="flex w-[160px] flex-col items-center justify-center rounded-lg border-2 border-gray-200 p-4"
+    <div
+      className="flex w-[160px] flex-col items-center justify-center rounded-lg border-2 border-gray-200 p-4 shadow-md duration-100 hover:scale-110 hover:border-r-red-600 hover:border-b-red-600"
       onClick={() => navigate(`/detail/${id}`)}
-      type="button"
+      role="button"
+      tabIndex={0}
     >
+      <FavoriteButton pokemonId={id} />
       <div>
-        <img src={front} alt={name} />
-        <img className="hidden" src={back} alt={name} />
+        {isImageLoading ? (
+          <div className="h-[96px] w-[96px] text-center leading-[96px]">
+            로딩 중입니다.
+          </div>
+        ) : null}
+        <img onLoad={() => setIsImageLoading(false)} src={front} alt={name} />
       </div>
-      <div>{name}</div>
-    </button>
+      <div className="font-[NeoDunggeunmo]">{name}</div>
+    </div>
   );
 };
+
+const PokemonCard = memo(PokemonCardComponent);
+
 export default PokemonCard;
