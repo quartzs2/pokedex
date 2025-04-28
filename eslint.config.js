@@ -20,6 +20,7 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
+      "jsx-a11y/click-events-have-key-events": "off",
       "react/button-has-type": "error",
     },
     plugins: {
