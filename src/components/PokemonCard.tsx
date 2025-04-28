@@ -1,5 +1,5 @@
+import { PokeData } from "@src/types/types";
 import { useNavigate } from "react-router";
-import { PokeData } from "@/types/types";
 
 const PokemonCard = ({ front, name, back, id }: PokeData) => {
   const navigate = useNavigate();

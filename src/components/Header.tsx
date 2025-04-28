@@ -1,4 +1,4 @@
-import { NAVIGATION_URL } from "@/constants/url";
+import { NAVIGATION_URL } from "@constants/url";
 import { Link } from "react-router";
 
 const Header = () => {
